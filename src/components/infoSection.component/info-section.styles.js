@@ -2,8 +2,15 @@ import styled from 'styled-components';
 
 export const Section = styled.section`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 100px;
+
+     h1 {
+        font-size: 3em;
+
+    }
 `;
 
 export const Container = styled.div`
@@ -22,7 +29,6 @@ export const ColumnLeft = styled.div`
     justify-content: center;
     align-items: flex-start;
     line-height: 1.4;
-    padding: 1rem 2rem;
 
     h1 {
         margin-bottom: 1rem;
@@ -35,7 +41,6 @@ export const ColumnLeft = styled.div`
 `;
 
 export const ColumnRight = styled.div`
-    padding: 1rem 2rem;
     order: ${({ reverse }) => (reverse ? '1' : '2')};
     display: flex;
     justify-content: center;
@@ -58,8 +63,8 @@ export const ColumnRight = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  object-fit: cover;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
 `;

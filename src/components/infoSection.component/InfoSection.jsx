@@ -5,6 +5,7 @@ import { Container, Section, ColumnLeft, ColumnRight, Image } from './info-secti
 function InfoSection({ heading, paragraphOne, paragraphTwo, reverse, image }) {
     return (
         <Section id="about-section">
+             <h1>Sobre Nós</h1>
             <Container>
                 <ColumnLeft>
                     <h1>{heading}</h1>
