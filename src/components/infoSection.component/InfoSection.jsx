@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Section, ColumnLeft, ColumnRight } from './info-section.styles';
+import { Container, Section, ColumnLeft, ColumnRight, Image } from './info-section.styles';
 
 function InfoSection({ heading, paragraphOne, paragraphTwo, buttonLabel, reverse, image }) {
     return (
@@ -12,7 +12,7 @@ function InfoSection({ heading, paragraphOne, paragraphTwo, buttonLabel, reverse
                     <p>{paragraphTwo}</p>
                 </ColumnLeft>
                 <ColumnRight reverse={reverse}>
-                    <img src={image} alt="home" />
+                    <Image src={image} alt="home" />
                 </ColumnRight>
             </Container>
         </Section>

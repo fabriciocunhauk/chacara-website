@@ -1,28 +1,18 @@
 import styled from 'styled-components';
 
-export const Section = styled.div`
+export const Section = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
 `;
 
 export const Container = styled.div`
-    padding: 3rem calc((100vw - 1300px) / 2);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1000px;
-    width: 90%;
+    max-width: 90%;
 
     @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
-        width: 100%;
-    }
-
-    @media screen and (max-width: 1400px) {
-        padding: 1rem;
-        grid-template-rows: 750px;
     }
 `;
 
@@ -33,7 +23,6 @@ export const ColumnLeft = styled.div`
     align-items: flex-start;
     line-height: 1.4;
     padding: 1rem 2rem;
-    order: ${({ reverse }) => (reverse ? '2' : '1')};
 
     h1 {
         margin-bottom: 1rem;
@@ -66,4 +55,11 @@ export const ColumnRight = styled.div`
             height: 90%;
         }
     }
+`;
+
+export const Image = styled.img`
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover; // Ensures image fills the container without distortion
 `;

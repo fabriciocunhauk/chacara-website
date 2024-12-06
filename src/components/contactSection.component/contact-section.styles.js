@@ -4,12 +4,10 @@ export const ContactSectionContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
     text-align: center;
+    padding: 100px 0;
 
     h1 {
-        margin-top: 90px;
         font-size: 3em;
     }
 `;
