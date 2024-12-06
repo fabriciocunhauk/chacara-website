@@ -61,5 +61,5 @@ export const Image = styled.img`
   width: 100%;
   height: auto;
   border-radius: 5px;
-  object-fit: cover; // Ensures image fills the container without distortion
+  object-fit: cover;
 `;

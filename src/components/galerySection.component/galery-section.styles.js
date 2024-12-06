@@ -6,9 +6,10 @@ export const GalerySectionContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 40px;
     text-align: center;
     width: 100vw;
-    margin-top: 40px;
+    padding: 100px 0;
     position: relative;
     background-image: url(${galeryBackground});
     background-position: center;
@@ -17,8 +18,6 @@ export const GalerySectionContainer = styled.div`
     z-index: 0;
 
     h1 {
-        padding-top: 80px;
-        margin-bottom: 40px;
         font-size: 3em;
         color: white;
     }
@@ -42,23 +41,23 @@ export const GalerySectionContainer = styled.div`
 export const GaleryCardContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
+    gap: 30px;
     align-items: center;
-    justify-content: space-around;
-    padding-bottom: 50px;
-    max-width: 1360px;
-    max-height: 80%;
+    justify-content: center;
+    max-width: 90%;
 `;
 
 export const CardImage = styled.img`
     width: 280px;
-    margin: 20px;
-    object-fit: contain;
+    height: 190px;
+    object-fit: cover;
     box-shadow: 1px 1px 10px black;
     transition: all .4s ease-in-out;
     cursor: pointer;
+    border-radius: 8px;
 
     &:hover {
-        transform: scale(1.2);
+        transform: scale(1.07);
     }
 `;
 

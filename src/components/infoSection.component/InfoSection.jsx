@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container, Section, ColumnLeft, ColumnRight, Image } from './info-section.styles';
 
-function InfoSection({ heading, paragraphOne, paragraphTwo, buttonLabel, reverse, image }) {
+function InfoSection({ heading, paragraphOne, paragraphTwo, reverse, image }) {
     return (
         <Section id="about-section">
             <Container>
