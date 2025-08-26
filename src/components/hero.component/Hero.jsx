@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-
 import { Button } from '../button.component/Button';
-
 import airbnbLogo from '../../images/SVG/airbnb-brands.svg'
-
+import Container from '../container.component/Container';
 import {
     HeroSection,
     HeroWrapper,
@@ -14,8 +12,11 @@ import {
     Arrow,
     SliderButtons,
     PrevArrow,
-    NextArrow
+    NextArrow,
+    SliderDots,
+    Dot
 } from './hero.styles';
+
 
 const Hero = ({ slides }) => {
     const [current, setCurrent] = useState(0);
@@ -42,7 +43,6 @@ const Hero = ({ slides }) => {
         if (timeout.current) {
             clearTimeout(timeout.current)
         }
-
         setCurrent(current === length - 1 ? 0 : current + 1);
     };
 
@@ -50,7 +50,6 @@ const Hero = ({ slides }) => {
         if (timeout.current) {
             clearTimeout(timeout.current)
         }
-
         setCurrent(current === 0 ? length - 1 : current - 1);
     };
 
@@ -61,6 +60,7 @@ const Hero = ({ slides }) => {
     return (
         <HeroSection id="main">
             <HeroContent>
+            <Container>
                 <h1>Colonia Malhada</h1>
                 <p>R$ 700 / Noite</p>
                 <Button href="https://www.airbnb.com.br/rooms/45446453?adults=1&federated_search_id=eee863d2-8ac6-4c83-82b3-5a34224fd5e4&source_impression_id=p3_1611960250_CXAxbCtuBl9YFzzn&guests=1"
@@ -72,16 +72,15 @@ const Hero = ({ slides }) => {
                     <img src={airbnbLogo} alt="airbnb-button" className="airbnb-logo" /> airbnb
                     <Arrow />
                 </Button>
+            </Container>
             </HeroContent>
             <HeroWrapper>
                 {slides.map((slide, index) => {
                     return (
                         <HeroSlide key={index}>
-                            {index === current && (
-                                <HeroSlider>
-                                    <HeroImage src={slide.image} alt={slide.alt} />
-                                </HeroSlider>
-                            )}
+                            <HeroSlider className={index === current ? 'active' : ''}>
+                                <HeroImage src={slide.image} alt={slide.alt} className={index === current ? 'active' : ''}/>
+                            </HeroSlider>
                         </HeroSlide>
                     )
                 })}
@@ -89,7 +88,17 @@ const Hero = ({ slides }) => {
                     <PrevArrow onClick={prevSlide} />
                     <NextArrow onClick={nextSlide} />
                 </SliderButtons>
+                <SliderDots>
+                    {slides.map((slide, index) => (
+                        <Dot
+                            key={index}
+                            active={index === current}
+                            onClick={() => setCurrent(index)}
+                        />
+                    ))}
+                </SliderDots>
             </HeroWrapper>
+            
         </HeroSection>
     )
 }

@@ -4,15 +4,17 @@ import { Link } from 'react-scroll';
 
 
 export const Nav = styled.nav`
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
     background: #00A699;
     box-shadow: 1px 1px 10px black;
-    padding: 1rem 2rem;
     z-index: 100;
     position: fixed;
     width: 100%;
+`;
+
+export const NavContainer = styled.nav`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 `;
 
 const NavLink = css`

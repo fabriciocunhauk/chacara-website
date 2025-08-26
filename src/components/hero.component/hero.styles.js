@@ -35,6 +35,12 @@ export const HeroSlider = styled.div`
    display: flex;
    align-items: center;
    justify-content: center;
+   transition: opacity 0.7s ease-in-out; /* Added transition */
+   opacity: 0;
+
+   &.active {
+       opacity: 1;
+   }
 
    &::before {
        content: '';
@@ -60,6 +66,12 @@ export const HeroImage = styled.img`
     width: 100vw;
     height: 100vh;
     object-fit: cover;
+    transition: transform 0.7s ease-in-out; /* Added transition */
+    transform: scale(1.05);
+
+    &.active {
+        transform: scale(1);
+    }
 `;
 
 export const HeroContent = styled.div`
@@ -74,7 +86,6 @@ export const HeroContent = styled.div`
     left: 5%;
 
     h1 {
-        /* Responsive fonts */
         font-size: clamp(1rem, 8vw, 2.5rem);  
         font-weight: bold;
         text-transform: uppercase;
@@ -104,7 +115,7 @@ const ArrowButtons = css`
     height: 50px;
     color: #fff;
     cursor: pointer;
-    background: #000d1a;
+    background: #00A699;
     border-radius: 50px;
     padding: 10px;
     margin-right: 1rem;
@@ -132,4 +143,34 @@ export const PrevArrow = styled(IoArrowBack)`
 
 export const NextArrow = styled(IoArrowForward)`
     ${ArrowButtons}
+`;
+
+// New Slider Dots components
+export const SliderDots = styled.div`
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+`;
+
+export const Dot = styled.div`
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  ${({ active }) => active && css`
+    background-color: #00A699;
+    transform: scale(1.2);
+  `}
+
+  &:hover {
+    background-color: #00A699;
+  }
 `;
