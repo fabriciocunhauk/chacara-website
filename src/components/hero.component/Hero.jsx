@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '../button.component/Button';
 import airbnbLogo from '../../images/SVG/airbnb-brands.svg'
-import Container from '../container.component/Container';
 import {
     HeroSection,
     HeroWrapper,
@@ -16,6 +15,7 @@ import {
     SliderDots,
     Dot
 } from './hero.styles';
+import { Container } from '../container.component/container.styles';
 
 
 const Hero = ({ slides }) => {
@@ -59,8 +59,8 @@ const Hero = ({ slides }) => {
 
     return (
         <HeroSection id="main">
+            <Container style={{ zIndex: 1 }}>
             <HeroContent>
-            <Container>
                 <h1>Colonia Malhada</h1>
                 <p>R$ 700 / Noite</p>
                 <Button href="https://www.airbnb.com.br/rooms/45446453?adults=1&federated_search_id=eee863d2-8ac6-4c83-82b3-5a34224fd5e4&source_impression_id=p3_1611960250_CXAxbCtuBl9YFzzn&guests=1"
@@ -72,8 +72,9 @@ const Hero = ({ slides }) => {
                     <img src={airbnbLogo} alt="airbnb-button" className="airbnb-logo" /> airbnb
                     <Arrow />
                 </Button>
-            </Container>
             </HeroContent>
+            </Container>
+            
             <HeroWrapper>
                 {slides.map((slide, index) => {
                     return (

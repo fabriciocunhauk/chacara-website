@@ -1,12 +1,13 @@
 import React from 'react';
-
-import { Container, Section, ColumnLeft, ColumnRight, Image } from './info-section.styles';
+import { ContentContainer, Section, ColumnLeft, ColumnRight, Image } from './info-section.styles';
+import { Container } from '../container.component/container.styles';
 
 function InfoSection({ heading, paragraphOne, paragraphTwo, reverse, image }) {
     return (
         <Section id="about-section">
              <h1>Sobre Nós</h1>
-            <Container>
+             <Container>
+            <ContentContainer>
                 <ColumnLeft>
                     <h1>{heading}</h1>
                     <p>{paragraphOne}</p>
@@ -15,7 +16,8 @@ function InfoSection({ heading, paragraphOne, paragraphTwo, reverse, image }) {
                 <ColumnRight reverse={reverse}>
                     <Image src={image} alt="home" />
                 </ColumnRight>
-            </Container>
+            </ContentContainer>
+             </Container>
         </Section>
     )
 };

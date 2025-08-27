@@ -4,10 +4,12 @@ import instagram from '../../images/SVG/instagram.svg';
 import email from '../../images/SVG/email.svg';
 import location from '../../images/SVG/location.svg';
 import phone from '../../images/SVG/phone.svg';
+import { Container } from '../container.component/container.styles';
 
 const Footer = () => {
     return (
         <FooterContainer>
+            <Container style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between',}}>
             <FooterContent1>
                 <a href="https://fabriciocunha.co.uk" alt="copyright" rel="noopener noreferrer" target="_blank">Website design by: <strong>Fabricio Cunha</strong></a>
             </FooterContent1>
@@ -19,6 +21,7 @@ const Footer = () => {
                 </a>
                 <a href="/"><img src={phone} alt="telefone" /></a>
             </FooterContent2>
+            </Container>
         </FooterContainer>
     )
 }

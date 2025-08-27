@@ -13,10 +13,9 @@ export const Section = styled.section`
     }
 `;
 
-export const Container = styled.div`
+export const ContentContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
-    max-width: 90%;
 
     @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
@@ -43,7 +42,7 @@ export const ColumnLeft = styled.div`
 export const ColumnRight = styled.div`
     order: ${({ reverse }) => (reverse ? '1' : '2')};
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
 
     @media screen and (max-width: 768px) {

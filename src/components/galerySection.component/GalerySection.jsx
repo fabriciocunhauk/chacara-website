@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { galeryPhotos } from '../../data/galeryData';
 import xButton from '../../images/SVG/x-mark.svg';
 import { GalerySectionContainer, GaleryCardContainer, CardImage, MyImageContainer, MyImage, CloseButton, Forward, Backward } from './galery-section.styles';
+import { Container } from '../container.component/container.styles';
 
 const GalerySection = () => {
     const [openImage, setOpenImage] = useState(false);
@@ -38,11 +39,13 @@ const GalerySection = () => {
     return (
         <GalerySectionContainer id="galery-section">
             <h1>Galeria</h1>
+            <Container>
             <GaleryCardContainer>
                 {galeryPhotos.map(image => {
                     return <CardImage src={image.photo} key={image.id} onClick={() => openPhoto(image.photo, image.id)} />
                 })}
             </GaleryCardContainer>
+            </Container>
             {
                 !openImage ? null : (
                     <MyImageContainer>

@@ -4,7 +4,8 @@ import { menuData } from '../../data/MenuData';
 
 import { Nav, Logo, MenuBars, NavMenu, NavBtn, NavMenuLinks, NavContainer } from './navbar-styles';
 import { Button } from '../button.component/Button';
-import Container from '../container.component/Container';
+import { Container } from '../container.component/container.styles';
+
 
 const NavBar = ({ toggle }) => {
     return (

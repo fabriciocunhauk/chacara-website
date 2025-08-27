@@ -44,20 +44,19 @@ export const GaleryCardContainer = styled.div`
     gap: 30px;
     align-items: center;
     justify-content: center;
-    max-width: 90%;
 `;
 
 export const CardImage = styled.img`
-    width: 280px;
+    width: 320px;
     height: 190px;
     object-fit: cover;
-    box-shadow: 1px 1px 10px black;
+    box-shadow: 1px 1px 20px black;
     transition: all .4s ease-in-out;
     cursor: pointer;
     border-radius: 8px;
 
     &:hover {
-        transform: scale(1.07);
+        transform: scale(1.03);
     }
 `;
 

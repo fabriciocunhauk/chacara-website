@@ -3,21 +3,21 @@ import { IoMdArrowRoundForward } from 'react-icons/io';
 import { IoArrowForward, IoArrowBack } from 'react-icons/io5';
 
 export const HeroSection = styled.section`
+    position: relative;
+    display: flex;
+    align-items: center;
     height: 100vh;
     max-height: 1100px;
-    position: relative;
     overflow: hidden;
-    z-index: 0;
 `;
 
 export const HeroWrapper = styled.div`
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom:0;
+    right: 0;
+    z-index: 0;
 `;
 
 export const HeroSlide = styled.div`
@@ -27,11 +27,6 @@ export const HeroSlide = styled.div`
 `;
 
 export const HeroSlider = styled.div`
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -75,15 +70,7 @@ export const HeroImage = styled.img`
 `;
 
 export const HeroContent = styled.div`
-    position: absolute;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    max-width: 1600px;
-    width: calc(100% - 100px);
     color: #fff;
-    top: 40%;
-    left: 5%;
 
     h1 {
         font-size: clamp(1rem, 8vw, 2.5rem);  
@@ -97,7 +84,6 @@ export const HeroContent = styled.div`
     p {
         font-weight: bold;
         margin-bottom: 1.2rem;
-        text-shadow: 2px 2px 10px black;
     }
 
     .airbnb-logo {
